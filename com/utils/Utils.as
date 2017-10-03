@@ -1,4 +1,4 @@
-﻿package 
+﻿package com.utils
 {
 	import flash.display.MovieClip;
 	import flash.utils.*;
