@@ -4,12 +4,14 @@
 	import flash.events.Event;
 	import com.utils.Utils;
 	import flash.events.MouseEvent;
+	import com.AnimatedThermometer;
 	
 	
 	public class Document extends MovieClip {
 		
 		private var m_CurrentState:int;
-		private const SECTION_ANIMATION_LENGTH:int = 30;
+		private var m_AnimatedThermometer:AnimatedThermometer;
+		public static const SECTION_ANIMATION_LENGTH:int = 30;
 		private const NUM_STATES:int = 6; // six because we're starting from 0 and go to 5
 		
 		public function Document() {
@@ -19,6 +21,7 @@
 		
 		private function init(e:Event)
 		{
+			m_AnimatedThermometer  = new AnimatedThermometer(mcInteractivePanel.mcThermometer);
 			Utils.StopAtFrameN(mcInteractivePanel);
 			this.resetState();
 			this.enablePlusButton();
@@ -32,6 +35,8 @@
 			
 			var animationFrame = m_CurrentState * SECTION_ANIMATION_LENGTH;
 			mcInteractivePanel.gotoAndPlay(animationFrame);
+
+			m_AnimatedThermometer.AnimateToPosition(m_CurrentState);
 			
 			m_CurrentState++;  //  no need to % this because the reset button takes care of it
 

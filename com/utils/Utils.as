@@ -46,5 +46,11 @@
 			{
 				return Class(getDefinitionByName(getQualifiedClassName(obj)));
 			}
+			
+		public static function Interpolate(normValue:Number, minimum:Number, maximum:Number):Number
+		{
+			//return minimum + (maximum – minimum) * normValue;
+			return 0;
+		}
 	}
 }
