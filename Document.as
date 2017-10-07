@@ -97,6 +97,7 @@
 		private function eh_HandleResetClick(e:MouseEvent)
 		{
 			mcInteractivePanel.gotoAndStop(0);
+			m_AnimatedThermometer.Reset();
 			this.enablePlusButton();
 			this.resetState();
 		}
