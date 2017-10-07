@@ -61,7 +61,7 @@
 		public function AnimateToPosition(index:int):void
 		{
 			this.addEventListener(Event.ENTER_FRAME, this.eh_HandleSliderAnimation, false, 0, true);
-			trace("Animate to slider position " + index);
+
 			m_TargetHeight = m_MercuryHeights[index];
 			m_StepValue = Math.abs(m_Mercury.y - m_TargetHeight) / Document.SECTION_ANIMATION_LENGTH; // distance to move / number of total animation frames
 		}
